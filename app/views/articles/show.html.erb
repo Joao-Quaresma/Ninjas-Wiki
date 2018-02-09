@@ -35,7 +35,7 @@
       <!-- that is not logged can see the post then at least that person cant delete or edit -->
       <% if logged_in? %>
         <%= link_to "Edit this post", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
-        <% if current_user == @article.user %>
+        <% if current_user == @article.user || current_user.admin? %>
           <%= link_to "Delete this post", article_path(@article), method: :delete, 
                                                                     data: { confirm: "Are you sure you want to delete this post?"}, 
                                                                     class: "btn btn-xs btn-danger" %>
