@@ -27,6 +27,14 @@
             <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
           </div>
         </div>
+        <% if logged_in? and current_user.admin?%>
+          <div class="form-check">
+            <div class="control-label col-sm-2">
+              <%= f.label :admin %>
+              <label><input type="checkbox" name="check"> <span class="label-text"></span></label>
+            </div>
+          </div>
+        <% end %>  
         <div class ="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <%= f.submit(@user.new_record? ? "Sign up" : "Update your account", class: 'btn btn-primary') %>
