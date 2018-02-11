@@ -4,7 +4,7 @@ class CategoriesControllerTest < ActionController::TestCase
   
   def setup
     @category = Category.create(name: "sports")
-    @user = User.create(username: "john", email: "test@zappistore.com", password: "111", admin: true)
+    @user = User.create(username: "john", email: "test@gmail.com", password: "password", admin: true)
   end
   
   test "should get categories index" do
@@ -14,7 +14,7 @@ class CategoriesControllerTest < ActionController::TestCase
   end
   
   test "should get new" do
-    session[:user_id] = @user.id
+   session[:user_id] = @user.id
     get :new
     assert_response :success
   end

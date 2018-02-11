@@ -11,7 +11,7 @@
           </div>
         </div>
         <!-- this next if logged_in is to make sure that if for some reason-->
-        <!-- that is not logged can see the post then at least that person cant delete or edit -->
+        <!-- a user that is not logged can see the post then at least that person cant delete or edit -->
         <% if logged_in? %>
           <div class="article-actions">
             <%= link_to "Edit this post", edit_article_path(article), class: "btn btn-xs btn-primary" %>
