@@ -8,6 +8,7 @@
           <li class="category-title">
             <%= link_to "#{category.name}", category_path(category) %>
           </li>
+          <li><small><%= pluralize(category.articles.count, "article") %></small></li>
           <!-- this next if logged_in is to make sure that if for some reason-->
           <!-- a user that is not logged can see the post then at least that person cant delete or edit -->
           <% if logged_in? %>
