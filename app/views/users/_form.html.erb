@@ -30,8 +30,8 @@
         <% if logged_in? and current_user.admin?%>
           <div class="form-check">
             <div class="control-label col-sm-2">
-              <%= f.label :admin %>
-              <label><input type="checkbox" name="check"> <span class="label-text"></span></label>
+                  <%= f.label "Admin" %> 
+                  <%= f.check_box :admin %>
             </div>
           </div>
         <% end %>  
@@ -46,3 +46,5 @@
     </div>
   </div>
 </div>  
+
+
