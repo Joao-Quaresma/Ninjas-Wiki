@@ -11,9 +11,6 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
   
-#  def edit
-#  end
-  
   def create
     @category = Category.new(category_params)
     if @category.save
@@ -24,15 +21,20 @@ class CategoriesController < ApplicationController
     end
   end
   
+   def edit
+     @category = Category.find(params[:id])
+   end
+  
 
- # def update
- #   if @category.update(category_params)
-#      flash[:success] = "Category was successfully updated"
-#      redirect_to category_path(@category)
-#    else
-#      render 'edit'
-#    end
-#  end
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      flash[:success] = "Category name was successfully updated"
+      redirect_to category_path(@category)
+    else
+      render 'edit'
+    end
+  end
 
 
   def show
@@ -41,6 +43,7 @@ class CategoriesController < ApplicationController
   end
   
   def destroy
+    @category = Category.find(params[:id])
     @category.destroy
     flash[:danger] = "Category was successfully deleted"
     redirect_to categories_path

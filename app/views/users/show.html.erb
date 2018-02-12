@@ -8,13 +8,11 @@
 
  <!-- the following if's will enable the option to edit user or users(if admin) profile -->
 <% if current_user.admin? and current_user != @user %>
-  <h5 align="center"><%= link_to "Edit user profile", edit_user_path(@user.id) %></h5>
+  <h5 align="center"><%= link_to "Edit user account", edit_user_path(@user.id) %></h5>
 <% end %>
 <% if current_user == @user %>
-  <h5 align="center"><%= link_to "Edit your profile", edit_user_path(current_user) %></h5>
+  <h5 align="center"><%= link_to "Edit your account", edit_user_path(current_user) %></h5>
 <% end %>
-
-
 
 
 
